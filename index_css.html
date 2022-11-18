@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevNotest</title>
+
+    <!-- Bootstrap Icons -->
+    <link 
+      rel="stylesheet" 
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- JS -->
+    <script src="js/scripts.js"></script>
+</head>
+<body>
+    <header>
+        <h1>DevNotes</h1>
+        <div id="search-container">
+            <!-- Icone de Pesquisa -->
+            <i class="bi bi-search"></i>
+            <!-- Campo de Pesquisa -->
+            <input 
+              type="text" 
+              id="search-input" 
+              placeholder="Busque por uma nota"
+            />    
+        </div>
+        <!-- Botão de Exportação -->
+        <button id="export-notes">
+            Exportar CSV <i class="bi bi-download"></i>
+        </button>
+    </header>
+    <div id="add-note-container">
+        <!-- Campo de Anotação -->
+        <input type="text" id="note-content" placeholder="O que deseja anotar?">
+        <!-- Botão de Adicionar Mais Uma Anotação -->
+        <button class="add-note"><i class="bi bi-plus-lg"></i></button>
+    </div>    
+    <div id="notes-container">
+        <div class="note fixed">
+            <!-- Area de Texto -->
+            <textarea placeholder="Adicione algum texto"></textarea>
+            <!-- Icone de Fixar -->
+            <i class="bi bi-pin"></i>
+            <!-- Icone de deletar -->
+            <i class="bi bi-x-lg"></i>
+            <!-- Icone de Duplicar -->
+            <i class="bi bi-file-earmark-plus"></i>
+        </div>
+
+        <div class="note fixed">
+            <!-- Area de Texto -->
+            <textarea placeholder="Adicione algum texto"></textarea>
+            <!-- Icone de Fixar -->
+            <i class="bi bi-pin"></i>
+            <!-- Icone de deletar -->
+            <i class="bi bi-x-lg"></i>
+            <!-- Icone de Duplicar -->
+            <i class="bi bi-file-earmark-plus"></i>
+        </div>
+    </div>
+</body>
+</html>
