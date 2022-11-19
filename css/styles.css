@@ -1,166 +1,151 @@
 /* Geral */
 * {
-    margin: 0;
-    padding: 0; 
-    box-sizing: border-box;
-    /*para o padding não somar com a largura do elemento 
-    e não ter elementos maiores que o estipulado*/
-    font-family: Helvetica;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica;
 }
 
-body{
-    background-color: #202124;
+body {
+  background-color: #202124;
 }
 
 /* Cabeçalho */
-header{
-    border-bottom: 1px solid #ccc;
-    padding: 1rem 2rem; /*1rem laterais 2rem em cima e em baixo */
-    color: #fff;
-    display: flex;
-    align-items: center;  /*Centralizar elementos */
-    justify-content: space-around;  /*Organizar elementos sentido Horizontal com espaço entre eles */
-}
-#search-container{
-    display: flex;
-    align-items: center;
-    gap: 1rem;  /*1rem para afastar a lupa do input */
-}
-#search-input{
-    background-color: #525356;
-    border-radius: 5px;
-    border: none;  /*Remover a aparencia da borda */
-    padding: 10px;
-    font-weight: bold;
-    color: #ddd;
-    width: 400px;
-}
-/*Mudar a cor do placeholder do input */
-#search-input::placeholder{
-    color:#ddd;
-}
-#export-notes{
-    background-color: #333;
-    border: 2px solid #fff;
-    border-radius: 4px;
-    color:#fff;
-    padding: 5px 15px;
-    cursor: pointer; /*Para aparecer o icone da mão ao passar o cursor do mouse */
-    transform: 0,4s;
-    /*Para fazer uma animação de houver*/
-    /*Ao passar o cursor do moouse sobre o elemento ele muda */
-}
-/*Inverter a cor de fundo com a cor do texto */
-#export-notes:hover{
-    background-color: #fff;
-    color: #333;
+header {
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 2rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
-/* Formulário de nova nota */
-#add-note-container{
-    display: flex;
-    width: 400px;
-    margin: 1rem auto 0;
-    gap: 1rem; /*1rem para afastar o icone do input */
+#search-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
-/* Os dois vão compartilhar as mesmas dimensões 
-no aspecto de arredondamento de borda  */
+
+#search-input {
+  background-color: #525356;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  color: #ddd;
+  width: 400px;
+}
+
+#search::placeholder {
+  color: #ddd;
+}
+
+#export-notes {
+  background-color: #333;
+  border: 2px solid #fff;
+  border-radius: 4px;
+  color: #fff;
+  padding: 5px 15px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+#export-notes:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Form de nova nota */
+#add-note-container {
+  display: flex;
+  width: 400px;
+  margin: 1rem auto 0;
+  gap: 1rem;
+}
+
 #add-note-container input,
-#add-note-container button{
-    padding: 10px;
-    border-radius: 5px;
-}
-/* Estilos diferentes para cada um deles  */
-#add-note-container input{
-    flex: 1; /* flex de 1 para ele crescer o máximo possível 
-    dentro dos 400px atribuidos em #add-note-container - width: 400px;  */
-    background-color: transparent;
-    border: 1px solid #525356;
-    color: #fff;
+#add-note-container button {
+  padding: 10px;
+  border-radius: 5px;
 }
 
-#add-note-container button{
-    cursor: pointer; /* Para aparecer o ponteiro do mouse */
-    background-color: #333;
-    color: #fff;
+#add-note-container input {
+  flex: 1;
+  background-color: transparent;
+  border: 1px solid #525356;
+  color: #fff;
 }
 
-/*Inverter a cor de fundo com a cor do texto */
-#add-note-container button:hover{
-    background-color: #fff;
-    color: #333;
+#add-note-container button {
+  cursor: pointer;
+  background-color: #333;
+  color: #fff;
 }
 
 /* Notas */
-#notes-container{
-    display: grid; /* Usar o GRID para a estrutura 
-    de um elemento ao lado de outro, que são colunas iguais que se repetem*/
-    grid-template-columns: repeat(auto-fill, 250px); /* Colocar auto-fill para deixar 
-    ele se encarregar da disposição dos elementos e limitar a largura para 250*/
-    /* limitar a largura para 250 */
-    padding: 2rem; /* Espaçamento interno da nota */
-    gap: 2rem; /*Gap 2rem para afastar uma nota da outra */
-}
-/* Nota individual */
-.note{
-    min-height: 200px; /*Altura mínima */
-    padding: 1rem;
-    border: 1px solid #ccc;
-    background-color: #202124;
-    border-radius: 10px;
-    color: #fff;
-    position: relative; /* Por que position: relative;? 
-    Porque teremos elementos posicionados de forma absoluta
-    Então a nota vai ser referencia desta */
-}
-.note textarea{
-    background-color: transparent; /* Cor de fundo da nota */
-    resize: none; /* Usuário não pode ficar aumentando e diminuindo a textarea de acordo com o padrão dela*/
-    color: #fff;
-    border: none; /* Remover a borda*/
-    height: 100%; /* Altura de 100% para preencher esses min-height 200px da .note*/
-    outline: none; /* Retirar o outline para não marcar quando dar um foco no input */
-}
-.note .bi-pin{
-    position: absolute;
-    left: 10px;
-    bottom: 10px;
-    font-size: 1.2rem;
-    background-color: #333;
-    cursor: pointer; /*Botão tem ação, por isso é importante colocar*/
-    padding: 5px;
-    border-radius: 3px;
-}
-/* Regra de Transação de ponto 3 segundos do hover
-Quando acontecer um hover na .note nos elementos i que estão dentro da .note
-eles vão ter opacity de 1 */ 
-.note:hover > i {
-   opacity: 1; /*Exibir icones quando um usuário focar em uma nota*/
-}
-.note .bi-x-lg,
-.note .bi-file-earmark-plus{
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-size: 0.9rem;
-    padding: 5px;
-    transition: 0.3s; /* Transação de ponto 3 segundos para fazer a regra do hover*/
-    color: #555;
-    cursor: pointer; /*Exibir quando um usuário foca em uma nota*/
-    opacity: 0; /*Esconder icones e mostrar apenas no .note:hover i >, quando um usuário focar em uma nota*/
+#notes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 250px);
+  padding: 2rem;
+  gap: 2rem;
 }
 
-/* Os icones estão em Intercecção, porque estão na mesma posição, para alterar isso colocamos um top 40px  */
-.note .bi-file-earmark-plus{
-    top: 40px; /*Para não ficar um icone em cima do outro*/
+.note {
+  min-height: 200px;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  background-color: #202124;
+  border-radius: 10px;
+  color: #fff;
+  position: relative;
 }
+
+.note textarea {
+  background-color: transparent;
+  resize: none;
+  color: #fff;
+  border: none;
+  height: 100%;
+  outline: none;
+}
+
+.note .bi-pin {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: #333;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.note:hover > i {
+  opacity: 1;
+}
+
+.note .bi-x-lg,
+.note .bi-file-earmark-plus {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 5px;
+  color: #555;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.note .bi-file-earmark-plus {
+  top: 40px;
+}
+
 .note .bi-x-lg:hover,
-.note .bi-file-earmark-plus:hover{
-    color: #fff;
+.note .bi-file-earmark-plus:hover {
+  color: #fff;
 }
-.note .bi-pin:hover{
-    color: #1bc14d;
-}
-.note.fixed{
-    background-color: #3c3c3f;
+
+.note.fixed {
+  background-color: #3c3c3f;
 }
