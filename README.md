@@ -1,6 +1,7 @@
 ## Olá, Bem vindo ao meu projeto de Sticky Notes
 
-![Screenshot_1](https://user-images.githubusercontent.com/25109094/233052333-fbb0a24c-f46f-43c7-b8c5-fba690ce62dc.png)
+![Screenshot_1](https://user-images.githubusercontent.com/25109094/233052679-7c781daf-1f53-41d1-b6a1-f3918528ea04.png)
+
 
 Acesse: https://keep-dun.vercel.app/
 
